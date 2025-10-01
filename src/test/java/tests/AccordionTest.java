@@ -41,7 +41,7 @@ public class AccordionTest {
         mainPage.clickAccordion(questionNumber);
 
         // Ждём появление нужного текста
-        WebElement accordionText = driver.findElement(By.id("accordion__panel-" + questionNumber));
+        WebElement accordionText = driver.findElement(By.id("accordion__panel-" + (questionNumber - 1)));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.textToBePresentInElement(accordionText, expectedText));
 
